@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700;800;900&display=swap');
+
+.Header {
+  font-size: 2.5;
+  font-weight: 500;
+  padding: 5rem 0;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.Header h1 {
+  color: transparent;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 6rem;
+  margin-bottom: 3rem;
+  font-weight: 800;
+  -webkit-text-stroke: 2px white;
+}
+
+.Wrapper {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  margin-top: 150px;
+  perspective: 1550px;
+  perspective-origin: 60% 50%;
+  transform: rotate(-5deg);
+}
+
+.Wrapper > div {
+  position: relative;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+}
+
+.Sun {
+  width: 350px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 125px;
+}
+
+.Sun .StarSun {
+  width: 350px;
+  height: 350px;
+  background: url(../images/sun.png) no-repeat;
+  background-size: cover;
+  border-radius: 250px;
+  margin: 0 auto;
+  animation: spinsun 40s infinite linear;
+}
+
+.Planet {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  animation-iteration-count: infinite;
+}
+
+.Shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent url(../images/shadow.png) 0% 0% no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+}
+
+.Murcury {
+  position: absolute;
+  width: 400px;
+  z-index: 1;
+  animation: orbitmurcury 12s infinite linear;
+  top: -8px;
+}
+
+.Murcury .Planet {
+  width: 25px;
+  height: 20px;
+  background: url(../images/Mercurio.png) no-repeat;
+  background-size: cover;
+  animation: anti 12s infinite linear;
+}
+
+.Murcury .Shadow {
+  animation: shadow 12s infinite linear;
+}
+
+.Venus {
+  position: absolute;
+  width: 506px;
+  z-index: 3;
+  animation: orbitvenus 15s infinite linear;
+  top: -20px;
+}
+
+.Venus .Planet{
+  width: 45px;
+  height: 40px;
+  background: url(../images/Venus.png);
+  background-size: cover;
+  animation: anti 15s infinite linear;
+}
+
+.Venus .Shadow {
+  animation: shadow 15s infinite linear;
+}
+
+.Terra {
+  position: absolute;
+  width: 610px;
+  z-index: 4;
+  animation: orbiterra 20s infinite linear;
+  top: -24px;
+}
+
+.Terra .Planet {
+  width: 55px;
+  height: 50px;
+  background: url(../images/Terra.png);
+  background-size: cover;
+  animation: anti 20s infinite linear;
+}
+
+.Terra .Shadow {
+  animation: shadow 20s infinite linear;
+}
+
+.Mart {
+  position: absolute;
+  width: 706px;
+  z-index: 5;
+  animation: orbitmart 30s infinite linear;
+  top: -30px;
+}
+
+.Mart .Planet {
+  width: 35px;
+  height: 32px;
+  background: url(../images/Marte.png);
+  background-size: cover;
+  animation: anti 30s infinite linear;
+}
+
+.Mart .Shadow {
+  animation: shadow 30s infinite linear;
+}
+
+.Jupiter {
+  position: absolute;
+  width: 1100px;
+  z-index: 6;
+  animation: orbitjupiter 50s infinite linear;
+  top: -100px;
+}
+
+.Jupiter .Planet {
+  width: 150px;
+  height: 130px;
+  background: url(../images/Jupiter.png);
+  background-size: cover;
+  animation: anti 50s infinite linear;
+}
+
+.Jupiter .Shadow {
+  animation: shadow 50s infinite linear;
+}
+
+.Saturno {
+  position: absolute;
+  width: 1400px;
+  z-index: 7;
+  animation: orbitsaturno 60s infinite linear;
+  top: -180px;
+}
+
+.Saturno .Planet {
+  width: 170px;
+  height: 130px;
+  background: url(../images/Saturno.png);
+  background-size: cover;
+  animation: anti 60s infinite linear;
+}
+
+.Urano {
+  position: absolute;
+  width: 1500px;
+  z-index: 8;
+  animation: orbiturano 70s infinite linear;
+  top: -250px;
+}
+
+.Urano .Planet {
+  width: 85px;
+  height: 70px;
+  background: url(../images/Urano.png);
+  background-size: cover;
+  animation: anti 70s infinite linear;
+}
+
+.Urano .Shadow {
+  animation: shadow 70s infinite linear;
+}
+
+@keyframes spinsun {
+
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    background-position: 130% 0%;
+  }
+  33% {
+    background-position: 50% 0%;
+  }
+  55% {
+    background-position: 0% 0%;
+  }
+  80% {
+    background-position: -50% 0%;
+  }
+  100% {
+    background-position: -50% 0%;
+  }
+}
+
+@keyframes orbitmurcury {
+  0% {
+    z-index: 2;
+    transform: rotateY(0);
+  }
+  49% {
+    z-index: 2;
+  }
+  50% {
+    z-index: -2;
+  }
+  99% {
+    z-index: -2;
+  }
+  100% {
+    z-index: 2;
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes orbitvenus {
+  0% {
+    z-index: 3;
+    transform: rotateY(0);
+  }
+  49% {
+    z-index: 3;
+  }
+  50% {
+    z-index: -3;
+  }
+  99% {
+    z-index: -3;
+  }
+  100% {
+    z-index: 3;
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes orbiterra {
+  0% {
+    z-index: 4;
+    transform: rotateY(0);
+  }
+  49% {
+    z-index: 4;
+  }
+  50% {
+    z-index: -4;
+  }
+  99% {
+    z-index: -4;
+  }
+  100% {
+    z-index: 4;
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes orbitmart {
+  0% {
+    z-index: 5;
+    transform: rotateY(0);
+  }
+  49% {
+    z-index: 5;
+  }
+  50% {
+    z-index: -5;
+  }
+  99% {
+    z-index: -5;
+  }
+  100% {
+    z-index: 5;
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes orbitjupiter {
+  0% {
+    z-index: 6;
+    transform: rotateY(0);
+  }
+  49% {
+    z-index: 6;
+  }
+  50% {
+    z-index: -6;
+  }
+  99% {
+    z-index: -6;
+  }
+  100% {
+    z-index: 6;
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes orbitsaturno {
+  0% {
+    z-index: 7;
+    transform: rotateY(0);
+  }
+  49% {
+    z-index: 7;
+  }
+  50% {
+    z-index: -7;
+  }
+  99% {
+    z-index: -7;
+  }
+  100% {
+    z-index: 7;
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes orbiturano {
+  0% {
+    z-index: 8;
+    transform: rotateY(0);
+  }
+  49% {
+    z-index: 8;
+  }
+  50% {
+    z-index: -8;
+  }
+  99% {
+    z-index: -8;
+  }
+  100% {
+    z-index: 8;
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes anti {
+  form {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+@keyframes anti-rings {
+  form {
+    transform: rotateY(0) rotateX(73deg);
+  }
+  to {
+    transform: rotateY(-360deg) rotateX(73deg);
+  }
+}
+
+.SolarSystem {
+  width: 100vw;
+  position: relative;
+}
+
+.SolarSystem-planetsContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 3.5rem 0;
+  width: 100vw;
+}
+
+.Title {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid white;
+  border-radius: 1rem;
+  color: transparent;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 3rem 2rem;
+  position: relative;
+  padding: 1rem;
+  text-align: center;
+  -webkit-text-stroke: 2px white;
+
+}
+
+.PlanetCard {
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-flow: column-reverse;
+  padding: 1rem;
+}
+
+.PlanetCard p {
+  font-size: 1.5rem;
+}
+
+.PlanetCard div {
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 200px;
+  justify-content: center;
+  width: fit-content;
+}
+
+.PlanetCard div img:hover {
+  filter: brightness(120%);
+}
+
+.Image-Mercúrio {
+  height: 20%;
+  z-index: 1;
+}
+
+.Image-Vênus, .Image-Terra {
+  height: 50%;
+  z-index: 1;
+}
+
+.Image-Marte {
+  height: 35%;
+  z-index: 1;
+}
+
+.Image-Júpiter {
+  height: 90%;
+  z-index: 1;
+}
+
+.Image-Saturno {
+  height: 100%;
+  z-index: 1;
+}
+
+.Image-Urano {
+  height: 70%;
+  z-index: 1;
+}
+
+.Image-Netuno {
+  height: 62%;
+  z-index: 1;
+}
+
+.Missions {
+  width: 100vw;
+}
+
+.Missions-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  position: relative;
+  margin: 1rem;
+}
+
+.MissionCard {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid white;
+  border-radius: 1rem;
+  flex-grow: 1;
+  margin: 1rem;
+  width: 300px;
+}
+
+.MissionCard:hover {
+  background-color: rgba(109, 107, 107, 0.7);
+}
+
+.MissionCard header {
+  border-bottom: 1px solid white;
+  padding: 1rem;
+}
+
+.MissionCard header h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.MissionCard div {
+  padding: 1.5rem;
+}
+
+.MissionCard div p {
+  font-size: 1.1rem;
+}
+
+.MissionCard div p:not( :last-child ) {
+  margin-bottom: 0.5rem;
+}
